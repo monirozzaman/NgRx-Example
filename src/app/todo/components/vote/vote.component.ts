@@ -55,14 +55,7 @@ export class VoteComponent implements OnInit {
     this.todos.subscribe(res => {
 
       res.forEach(todo => {
-        this.backendService.addTotalVote(todo.symbol, todo.complete).subscribe(result => {
-          if (result.symbolName === 'dhaka')
-          {
-
-          }
-          else if (result.symbolName === 'chittagong')
-          console.log(result);
-        });
+        this.backendService.addTotalVote(todo.symbol, todo.complete).subscribe();
       });
     });
   }

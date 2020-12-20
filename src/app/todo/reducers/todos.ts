@@ -43,12 +43,12 @@ export function reducer(
             return adapter.removeOne(action.id, state);
         }
 
-        case todo.COMPLETE_TODO: {
-            return adapter.updateOne({
-                id: action.id,
-                changes: { complete: !state.entities[action.id].complete }
-            }, state);
-        }
+        // case todo.COMPLETE_TODO: {
+        //     return adapter.updateOne({
+        //         id: action.id,
+        //         changes: { complete: !state.entities[action.id].complete }
+        //     }, state);
+        // }
 
         case todo.SELECT_TODO: {
             return {

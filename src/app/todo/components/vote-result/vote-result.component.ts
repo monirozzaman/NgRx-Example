@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {BackendService} from '../../services/backend.service';
+import {ResultResponse} from './result.response';
 
 
 @Component({
@@ -9,32 +10,20 @@ import {BackendService} from '../../services/backend.service';
 })
 export class VoteResultComponent implements OnInit {
   countVoteListForChittagong: number;
-  countVoteListForDhaka: number;
+  countVoteListList: Array<ResultResponse> = new Array<ResultResponse>();
 
 
   constructor(private backendService: BackendService) {
   }
 
   ngOnInit(): void {
-
+    this.getResult();
   }
 
   getResult(): void {
     this.backendService.getResult().subscribe(res => {
-      console.log(res);
-      // res.forEach(result => {
-      //
-      //   console.log(result.totalVote);
-      //   // if (result.symbolName.match('dhaka')) {
-      //   //
-      //   //   this.countVoteListForDhaka = result.totalVote;
-      //   //   console.log('Dhaka' + this.countVoteListForDhaka);
-      //   // } else if ( result.symbolName.match('chittagong')) {
-      //   //   this.countVoteListForChittagong = result.totalVote;
-      //   //   console.log('chittagong' + this.countVoteListForDhaka);
-      //   // }
-      // });
-
+      this.countVoteListList = res;
+      console.log(this.countVoteListList);
     });
   }
 }

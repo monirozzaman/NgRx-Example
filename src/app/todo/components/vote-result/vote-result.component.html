@@ -5,23 +5,14 @@
   </div>
 
   <div class="row">
-    <div class="card col-md-4 m-5" style="width: 18rem;">
+    <div class="card col-md-4 m-5" style="width: 18rem;" *ngFor="let countVote of countVoteListList">
       <div class="card-body">
-        <h1 class="card-title text-center">Dhaka</h1>
-        <h5 class="card-text text-center">Not Published</h5>
-
-      </div>
-    </div>
-    <div class="card col-md-4 m-5" style="width: 18rem;">
-      <div class="card-body">
-        <h1 class="card-title text-center">Chittagong </h1>
-        <h5 class="card-text text-center">Not Published</h5>
+        <h1 class="card-title text-center">{{ countVote.symbolName.toLocaleUpperCase() }}</h1>
+        <h3 class="card-text text-center text-danger">{{ countVote.totalVote }}</h3>
 
       </div>
     </div>
   </div>
-
-
 </div>
 
 
