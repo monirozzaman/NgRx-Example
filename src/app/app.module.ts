@@ -12,6 +12,7 @@ import {VoteResultComponent} from './todo/components/vote-result/vote-result.com
 import {AppRoutingModule} from './app-routing.module';
 import {HttpClientModule} from '@angular/common/http';
 import {BackendService} from './todo/services/backend.service';
+import {ReduxService} from './todo/services/redux.service';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import {BackendService} from './todo/services/backend.service';
     })
   ],
   providers: [
-    BackendService
+    BackendService,
+    ReduxService
   ],
   bootstrap: [AppComponent]
 })
